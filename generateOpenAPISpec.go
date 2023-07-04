@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// generateOpenAPISpec generates the OpenAPI Specification
 func generateOpenAPISpec(path string, orm string) error {
 	var models map[string]map[string]string
 	var err error

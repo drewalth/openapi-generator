@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// parseSequelizeModels parses Sequelize models and returns a map of model names and their properties
 func parseSpringBootModels(path string) (map[string]map[string]string, error) {
 	files, err := ioutil.ReadDir(path)
 	if err != nil {

@@ -6,6 +6,7 @@ import (
 	"regexp"
 )
 
+// parseSequelizeModels parses Sequelize models and returns a map of model names and their properties
 func parseSequelizeModels(path string) (map[string]map[string]string, error) {
 	files, err := ioutil.ReadDir(path)
 	if err != nil {

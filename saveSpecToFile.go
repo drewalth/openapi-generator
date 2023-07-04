@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 )
 
+// saveSpecToFile saves the specification to a yaml file
 func saveSpecToFile(spec string) error {
 	// Save the specification in 'openapi' directory
 	cwd, err := os.Getwd()

@@ -6,6 +6,7 @@ import (
 	"regexp"
 )
 
+// parseEloquentModels parses Eloquent models and returns a map of model names and their properties
 func parseEloquentModels(path string) (map[string]map[string]string, error) {
 	files, err := ioutil.ReadDir(path)
 	if err != nil {

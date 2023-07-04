@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// generateOpenAPISpecContent generates the content of the OpenAPI Specification
 func generateOpenAPISpecContent(models map[string]map[string]string) string {
 	spec := `openapi: 3.1.0
 info:
