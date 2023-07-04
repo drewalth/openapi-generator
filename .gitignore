@@ -1,0 +1,59 @@
+# Binaries, executables and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below if you want to ignore them)
+# vendor/
+
+# Build artifacts
+**/dist
+
+# IDE/Editor folders
+.idea/
+.vscode/
+
+# macOS specific
+.DS_Store
+
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.s
+
+# Folders
+_obj
+_test
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+# Log files
+*.log
+
+# go-build temporary directory
+go-build/
+
+# go.mod and go.sum can be included for dependency tracking
+# Uncomment the following lines if you don't want to include them
+# go.mod
+# go.sum
+
+openapi/
