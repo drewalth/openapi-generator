@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# This hook ensures that commit messages follow the Conventional Commits format
+# Example: feat(module): add new function
+
+message=$(cat "$1")
+
+# Simple regex to validate conventional commit format
+if ! echo "$message" | grep -qE '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\(.+\))?: .+'; then
+    echo "Error: Commit message does not follow the Conventional Commits format."
+    exit 1
+fi

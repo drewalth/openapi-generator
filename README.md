@@ -16,9 +16,9 @@ git clone https://github.com/drewalth/openapi-generator.git
 ```bash
 cd openapi-generator
 ```
-3. Install dependencies:
+3. Run setup script. This will install project dependencies and configure git hooks.
 ```bash
-go get
+make setup
 ```
 
 ## Usage
