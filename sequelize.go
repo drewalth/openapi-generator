@@ -24,15 +24,39 @@ func parseSequelizeModels(path string) (map[string]map[string]string, error) {
 			return nil, err
 		}
 
-		re := regexp.MustCompile(`(\w+):\s*Sequelize\.\w+`)
+		reModelName := regexp.MustCompile(`sequelize\.define\(['"](\w+)['"]`)
+		matchModelName := reModelName.FindStringSubmatch(string(content))
+		if len(matchModelName) < 2 {
+			continue
+		}
+
+		modelName := matchModelName[1]
+
+		re := regexp.MustCompile(`(\w+):\s*\{\s*type:\s*Sequelize\.(\w+)(\([^)]*\))?\s*`)
 		matches := re.FindAllStringSubmatch(string(content), -1)
 
 		properties := make(map[string]string)
 		for _, match := range matches {
 			propName := match[1]
-			properties[propName] = "string" // Defaulting to string as a placeholder
+			dataType := match[2]
+
+			// Map Sequelize data type to OpenAPI data type
+			switch dataType {
+			case "STRING", "TEXT":
+				properties[propName] = "string"
+			case "INTEGER", "BIGINT":
+				properties[propName] = "integer"
+			case "FLOAT", "REAL", "DOUBLE":
+				properties[propName] = "number"
+			case "BOOLEAN":
+				properties[propName] = "boolean"
+			case "DATE":
+				properties[propName] = "string" // You can also add "format": "date-time" in OpenAPI spec
+			default:
+				properties[propName] = "string" // Default to string if no match
+			}
 		}
-		models[file.Name()] = properties
+		models[modelName] = properties
 	}
 
 	return models, nil
