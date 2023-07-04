@@ -1,8 +1,8 @@
 # OpenAPI Specification Generator
 
-This CLI tool is a basic example that demonstrates how to generate an OpenAPI Specification (version 3.1.0) from data
-models in a software project that uses an Object Relational Mapper (ORM). The tool currently supports Laravel Eloquent (
-PHP), Sequelize (JavaScript), and Spring Boot (Java) ORMs.
+This CLI tool generates an OpenAPI Specification from data models in a software project that uses an Object Relational
+Mapper (ORM). The tool currently supports Laravel Eloquent (PHP), Sequelize (JavaScript), and Spring Boot (Java) ORMs.
+The generated specification is very basic and will need to be extended to cover all of your cases.
 
 ## Prerequisites
 
