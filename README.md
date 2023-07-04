@@ -1,8 +1,16 @@
 # OpenAPI Specification Generator
 
-This CLI tool generates an OpenAPI Specification from data models in a software project that uses an Object Relational
+This CLI tool generates an [OpenAPI Specification](https://swagger.io/specification/) from data models in a software project that uses an Object Relational
 Mapper (ORM). The tool currently supports Laravel Eloquent (PHP), Sequelize (JavaScript), and Spring Boot (Java) ORMs.
-The generated specification is very basic and will need to be extended to cover all of your cases.
+
+## Why?
+
+The OpenAPI Specification is a powerful tool for documenting REST APIs. However, it can be tedious to write the
+specification manually. This tool aims to jumpstart the process by generating a basic starting point for your 
+API documentation journey.
+
+Once you have an OpenAPI specification, you can use it to generate documentation, client SDKs, and server stubs using
+the [OpenAPI Generator](https://openapi-generator.tech/).
 
 ## Prerequisites
 
