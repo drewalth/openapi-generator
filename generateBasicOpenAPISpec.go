@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func generateBasicOpenAPISpec(models map[string]map[string]string) string {
+func generateOpenAPISpecContent(models map[string]map[string]string) string {
 	spec := `openapi: 3.1.0
 info:
   title: Auto-generated API Spec

@@ -23,7 +23,7 @@ func generateOpenAPISpec(path string, orm string) error {
 	}
 
 	// Generate OpenAPI Specification
-	spec := generateBasicOpenAPISpec(models)
+	spec := generateOpenAPISpecContent(models)
 
 	// Save to file
 	err = saveSpecToFile(spec)
