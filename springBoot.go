@@ -45,7 +45,22 @@ func parseSpringBootModels(path string) (map[string]map[string]string, error) {
 		for _, match := range matchesProps {
 			propType := match[1]
 			propName := match[2]
-			properties[propName] = propType
+
+			// Map Java data type to OpenAPI data type
+			switch propType {
+			case "String":
+				properties[propName] = "string"
+			case "int", "Integer", "long", "Long":
+				properties[propName] = "integer"
+			case "float", "double", "Float", "Double":
+				properties[propName] = "number"
+			case "boolean", "Boolean":
+				properties[propName] = "boolean"
+			case "Date":
+				properties[propName] = "string" // You can also add "format": "date-time" in OpenAPI spec
+			default:
+				properties[propName] = "string" // Default to string if no match
+			}
 		}
 		models[className] = properties
 	}
